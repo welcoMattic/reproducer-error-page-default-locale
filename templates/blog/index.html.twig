@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/home/welcomattic/workspace/playground/locale-exception/src/Controller/BlogController.php'|file_link(0) }}">src/Controller/BlogController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/home/welcomattic/workspace/playground/locale-exception/templates/blog/index.html.twig'|file_link(0) }}">templates/blog/index.html.twig</a></code></li>
+    </ul>
+
+    <p>Current locale is: {{ app.request.locale }}</p>
+    <a href="{{ path('blog', {'_locale': 'fr_FR'}) }}">Go to FR version</a><br>
+    <a href="{{ path('blog', {'_locale': 'en_GB'}) }}">Go to EN version</a>
+    <br><br>
+    <a href="{{ path('blog', {'_locale': 'fr_FR'}) ~ 'error'}}">Go to FR error page version</a><br>
+    <a href="{{ path('blog', {'_locale': 'en_GB'}) ~ 'error'}}">Go to EN error page version</a>
+</div>
+{% endblock %}
